@@ -6,4 +6,3 @@ app, slack.exe
 lockapp, slack.exe
 pycharm, pycharm64.exe
 webstorm, webstorm64.exe
-^notepad plus plus$,notepad++.exe
