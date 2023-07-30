@@ -4,6 +4,7 @@ control mouse:
 zoom mouse:
 	# tracking.control_zoom_toggle()
 	user.zoom_mouse_switch()
+control off: user.mouse_sleep()
 camera overlay: tracking.control_debug_toggle()
 run calibration: tracking.calibrate()
 touch:
