@@ -35,14 +35,6 @@ class AppActions:
 
     def window_hide_others():
         actions.key("win-d alt-tab")
-        # requires easy window switcher or equivalent (built into most Linux)
-
-    def window_next():         # MG window_next is a mac specific shortcut
-        actions.key("alt-`")
 
     def window_open():
         actions.key("ctrl-n")
-        # requires easy window switcher or equivalent (built into most Linux)
-
-    def window_previous():        # MG window_previous() is a mac specific shortcut
-        actions.key("alt-shift-`")

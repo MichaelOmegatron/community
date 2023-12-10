@@ -236,8 +236,6 @@ class Actions:
         rect = ui.active_window().rect
         actions.mouse_move(rect.center.x, rect.center.y)
 
-
-
 def show_cursor_helper(show):
     """Show/hide the cursor"""
     if app.platform == "windows":
