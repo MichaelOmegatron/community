@@ -116,3 +116,6 @@ copy mouse position: user.copy_mouse_position()
 curse no:
     # Command added 2021-12-13, can remove after 2022-06-01
     app.notify("Please activate the user.mouse_cursor_commands_enable tag to enable this command")
+
+roll up:              user.hiss_scroll_up()
+roll down:            user.hiss_scroll_down()

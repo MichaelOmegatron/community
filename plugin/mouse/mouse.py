@@ -11,6 +11,7 @@ scroll_job = None
 gaze_job = None
 cancel_scroll_on_pop = True
 control_mouse_forced = False
+hiss_scroll_up = False
 
 default_cursor = {
     "AppStarting": r"%SystemRoot%\Cursors\aero_working.ani",
@@ -219,6 +220,23 @@ class Actions:
         rect = ui.active_window().rect
         ctrl.mouse_move(rect.left + (rect.width / 2), rect.top + (rect.height / 2))
 
+    def hiss_scroll_up():
+        """Change mouse hiss scroll direction to up"""
+        global hiss_scroll_up
+        hiss_scroll_up = True
+
+    def hiss_scroll_down():
+        """Change mouse hiss scroll direction to down"""
+        global hiss_scroll_up
+        hiss_scroll_up = False
+
+    # MG Manually added from AndreasArvidsson mouse.py
+    def mouse_center_window():
+        """Move the mouse cursor to the center of the currently active window"""
+        rect = ui.active_window().rect
+        actions.mouse_move(rect.center.x, rect.center.y)
+
+
 
 def show_cursor_helper(show):
     """Show/hide the cursor"""
@@ -285,10 +303,36 @@ class UserActions:
     def noise_trigger_hiss(active: bool):
         if setting_mouse_enable_hiss_scroll.get():
             if active:
-                actions.user.mouse_scroll_down_continuous()
+                if hiss_scroll_up:
+                    actions.user.mouse_scroll_up_continuous()
+                else:
+                    actions.user.mouse_scroll_down_continuous()
             else:
                 actions.user.mouse_scroll_stop()
 
+# MG My own custom Middle mouse hissing for auto-scroll. Close to what I want.
+    # def noise_trigger_hiss(active: bool):
+        # if setting_mouse_enable_hiss_scroll.get():
+            # if active:
+                # middle_mouse_hold()
+            # else:
+                # actions.user.mouse_drag_end()
+
+# MG My own custom work on an idea for interaction zone scrolling when hissing
+# Gaze_scroll uses pixel positino for dynamic scroll speed with formula, so it is not binary.
+# If I could get the rectangle area of an interaction zone, and have the interaction zone
+# appear at the cursor position, then hissing and moving your head up/down coudl dynamically
+# change cursor speed like an analog stick, but with your head instead of your eyes.
+    # def noise_trigger_hiss(active: bool):
+        # if setting_mouse_enable_hiss_scroll.get():
+            # if active:
+                # actions.user.mouse_gaze_scroll()
+            # else:
+                # actions.user.mouse_scroll_stop()
+
+# def middle_mouse_hold():
+    # """holds middle mouse button"""
+    # actions.user.mouse_drag(2)
 
 def mouse_scroll(amount):
     def scroll():

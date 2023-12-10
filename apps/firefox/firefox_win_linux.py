@@ -24,9 +24,9 @@ class BrowserActions:
     def focus_address():
         # Only using "ctrl-l" might fail and clear the console if the user
         # is focused in the devtools
-        actions.key("f6")
-        actions.sleep("100ms")
-        actions.key("ctrl-l")
+        actions.key("alt-d") # MG changed from f6 to alt-d. This way I can use f6 for other functions while in firefox.
+        #actions.sleep("100ms") #MG commented out. No longer necessary.
+        #actions.key("ctrl-l") #MG commented out. No longer necessary.
 
     def open_private_window():
         actions.key("ctrl-shift-p")

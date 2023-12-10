@@ -57,17 +57,17 @@ select way right: edit.extend_line_end()
 select way up: edit.extend_file_start()
 select way down: edit.extend_file_end()
 
-# Indentation
-indent [more]: edit.indent_more()
-(indent less | out dent): edit.indent_less()
+# Indentation # MG Commenting out for my own simpler indent voice commmands
+#indent [more]: edit.indent_more()
+#(indent less | out dent): edit.indent_less()
 
-# Delete
+# Delete (# MG adding "wipe" to my favorite clear commands)
 clear all: user.delete_all()
-clear line: edit.delete_line()
+(wipe | clear) line: edit.delete_line()
 clear line start: user.delete_line_start()
 clear line end: user.delete_line_end()
-clear left: edit.delete()
-clear right: user.delete_right()
+(wipe | clear) left: edit.delete()
+(wipe | clear) right: user.delete_right()
 
 clear up:
     edit.extend_line_up()
@@ -77,21 +77,21 @@ clear down:
     edit.extend_line_down()
     edit.delete()
 
-clear word: edit.delete_word()
+(wipe | clear) word: edit.delete_word()
 
-clear word left:
+(wipe | clear) word left:
     edit.extend_word_left()
     edit.delete()
 
-clear word right:
+(wipe | clear) word right:
     edit.extend_word_right()
     edit.delete()
 
-clear way left:
+(wipe | clear) way left:
     edit.extend_line_start()
     edit.delete()
 
-clear way right:
+(wipe | clear) way right:
     edit.extend_line_end()
     edit.delete()
 

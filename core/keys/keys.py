@@ -168,11 +168,18 @@ punctuation_words = {
     "left paren": "(",
     "R paren": ")",
     "right paren": ")",
+    # MG adding the below for my own dictation purposes. "Underscore score" and "dash dash" are used so when I dictate the words underscore and dash, they don't get picked up as symbols.
+    "underscore score": "_",
+    "dash dash": "-",
+    "hashtag": "#",
+    "quote": '"', # MG may need to add a "qwone" if I don't always say the T at the end.
+    "quotation": '"',
+    "quotation mark": '"',
 }
 symbol_key_words = {
     "dot": ".",
     "point": ".",
-    "quote": "'",
+    "single quote": "'", # MG added single to name to free up quote for double quotation marks. I never use single quotes as quotes in my daily life.
     "question": "?",
     "apostrophe": "'",
     "L square": "[",
@@ -245,10 +252,10 @@ simple_keys = [
     "space",
     "tab",
 ]
-
+# MG Manually edit: I am commenting out '"delete": "backspace"' because I find that annoying. Defined delete and backspace in talon file as commands instead.
 alternate_keys = {
     "wipe": "backspace",
-    "delete": "backspace",
+    #"delete": "backspace",
     #'junk': 'backspace',
     "forward delete": "delete",
     "page up": "pageup",

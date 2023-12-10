@@ -99,8 +99,8 @@ class EditActions:
         actions.key("f3")
         # action(edit.find_previous):
 
-    def indent_less():
-        actions.key("home delete")
+    def indent_less(): # MG changing this from "home delete" to "home shift-tab"
+        actions.key("home shift-tab")
 
     def indent_more():
         actions.key("home tab")
